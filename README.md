@@ -1,62 +1,74 @@
-### Context
+# Football Team Ranking Analysis
 
-Well, what happened was that I was looking for a semi-definite easy-to-read list of international football matches and couldn't find anything decent. So I took it upon myself to collect it for my own use. I might as well share it.
+Welcome to the "Football Team Ranking Analysis" project repository. This project focuses on analyzing international football team rankings based on the provided dataset "international_matches.csv." We'll explore the dataset, visualize team rankings, and build machine learning models to predict team ranking points.
 
-### Content
+## Table of Contents
+- [About](#about)
+- [Dataset Explanation](#dataset-explanation)
+- [Project Structure](#project-structure)
+- [Data Exploration](#data-exploration)
+- [Data Preprocessing](#data-preprocessing)
+- [Visualization](#visualization)
+- [Machine Learning Models](#machine-learning-models)
+- [Results](#results)
+- [Next Steps](#next-steps)
+- [Contact Information](#contact-information)
 
-This dataset includes **44,762** results of international football matches starting from the very first official match in 1872 up to 2023. The matches range from FIFA World Cup to FIFI Wild Cup to regular friendly matches. The matches are strictly men's full internationals and the data does not include Olympic Games or matches where at least one of the teams was the nation's B-team, U-23 or a league select team.
+## About
+This project aims to provide insights into international football team rankings by analyzing the dataset "international_matches.csv." We'll explore historical ranking data, visualize team performance, and apply machine learning to predict team ranking points.
 
-`results.csv` includes the following columns:
+## Dataset Explanation
+The dataset "international_matches.csv" contains information about international football matches. Here's an overview of the dataset:
 
--   `date` - date of the match
--   `home_team` - the name of the home team
--   `away_team` - the name of the away team
--   `home_score` - full-time home team score including extra time, not including penalty-shootouts
--   `away_score` - full-time away team score including extra time, not including penalty-shootouts
--   `tournament` - the name of the tournament
--   `city` - the name of the city/town/administrative unit where the match was played
--   `country` - the name of the country where the match was played
--   `neutral` - TRUE/FALSE column indicating whether the match was played at a neutral venue
+- **date**: The date of the match.
+- **team**: The home team participating in the match.
+- **rank**: The FIFA ranking of the home team.
+- **rank_points**: The total FIFA ranking points of the home team.
 
-`shootouts.csv` includes the following columns:
+This dataset allows us to analyze how FIFA rankings and ranking points have evolved over time for different football teams.
 
--   `date` - date of the match
--   `home_team` - the name of the home team
--   `away_team` - the name of the away team
--   `winner` - winner of the penalty-shootout
+## Project Structure
+The project's directory structure is organized as follows:
 
-`goalscorers.csv` includes the following columns:
+- `analysis.py`: Python script containing code for data analysis and machine learning.
+- `international_matches.csv`: The dataset containing international football match information.
+- `README.md`: Project documentation.
 
--   `date` - date of the match
--   `home_team` - the name of the home team
--   `away_team` - the name of the away team
--   `team` - name of the team scoring the goal
--   `scorer` - name of the player scoring the goal
--   `own_goal` - whether the goal was an own-goal
--   `penalty` - whether the goal was a penalty
+## Data Exploration
+We started by exploring the dataset to understand its structure and characteristics. Some key exploratory steps include:
+- Checking basic statistics.
+- Identifying missing values (if any).
+- Visualizing team rankings and ranking point distributions.
 
-Note on team and country names: For home and away teams the *current* name of the team has been used. For example, when in 1882 a team who called themselves Ireland played against England, in this dataset, it is called Northern Ireland because the current team of Northern Ireland is the successor of the 1882 Ireland team. This is done so it is easier to track the history and statistics of teams.
+## Data Preprocessing
+Data preprocessing involved handling any missing values and preparing the dataset for machine learning. Fortunately, there were no missing values in this dataset, so we proceeded with the analysis without the need for extensive data preprocessing.
 
-For country names, the name of the country *at the time of the match* is used. So when Ghana played in Accra, Gold Coast in the 1950s, even though the names of the home team and the country don't match, it was a home match for Ghana. This is indicated by the neutral column, which says FALSE for those matches, meaning it was **not** at a neutral venue.
+## Visualization
+Visualizations played a crucial role in gaining insights into team rankings. Key visualizations include:
+- A bar chart showing the average ranking for the top 15 teams.
+- A histogram of team rankings.
+- A histogram of team ranking points.
+- A correlation heatmap to understand relationships between variables.
 
-### Acknowledgements
+## Machine Learning Models
+We applied machine learning models to predict team ranking points based on available features. Three models were utilized:
+- Logistic Regression
+- K-Nearest Neighbors
+- Decision Trees
 
-The data is gathered from several sources including but not limited to Wikipedia, rsssf.com, and individual football associations' websites.
+## Results
+Our models were trained and evaluated, resulting in the following accuracy scores:
+- Logistic Regression Accuracy: XX%
+- K-Nearest Neighbors Accuracy: XX%
+- Decision Tree Accuracy: XX%
 
-### Inspiration
+## Next Steps
+Looking ahead, potential next steps include:
+- Fine-tuning machine learning models for better performance.
+- Exploring additional datasets to enrich the analysis.
+- Deploying a predictive model for real-time ranking point estimation.
 
-Some directions to take when exploring the data:
+## Contact Information
+For further discussions, questions, or potential collaborations, please feel free to contact me.
 
--   Who is the best team of all time
--   Which teams dominated different eras of football
--   What trends have there been in international football throughout the ages - home advantage, total goals scored, distribution of teams' strength etc
--   Can we say anything about geopolitics from football fixtures - how has the number of countries changed, which teams like to play each other
--   Which countries host the most matches where they themselves are not participating in
--   How much, if at all, does hosting a major tournament help a country's chances in the tournament
--   Which teams are the most active in playing friendlies and friendly tournaments - does it help or hurt them
-
-The world's your oyster, my friend.
-
-### Contribute
-
-If you notice a mistake or the results are being updated fast enough for your liking, you can fix that by submitting a pull request.
+Thank you for your interest in this football ranking analysis project.
